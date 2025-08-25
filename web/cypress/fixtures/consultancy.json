@@ -1,0 +1,44 @@
+{
+  "personal": {
+    "name": "romulo sergio",
+    "email": "romulo@gmail.com",
+    "phone": "21 99999-8888",
+    "consultancyType": "Individual",
+    "personType": "cpf",
+    "document": "46653740072",
+    "discoveryChannels": [
+      "Instagram",
+      "LinkedIn",
+      "Udemy",
+      "YouTube",
+      "Indicação de Amigo"
+    ],
+    "file": "./cypress/fixtures/document.pdf",
+    "description": "qualuqer coisa no textarea para teste",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "WebDriverIO"
+    ],
+    "terms": true
+  },
+  "company": {
+    "name": "romulo sergio",
+    "email": "romulo@gmail.com",
+    "phone": "21 99999-8888",
+    "consultancyType": "In Company",
+    "personType": "cnpj",
+    "document": "58830552000107",
+    "discoveryChannels": [
+      "LinkedIn"
+    ],
+    "file": "./cypress/fixtures/document.pdf",
+    "description": "qualuqer coisa no textarea para teste",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "WebDriverIO"
+    ],
+    "terms": true
+  }
+}
