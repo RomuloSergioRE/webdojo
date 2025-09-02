@@ -23,7 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import { getTodayDate }  from  '../support/utils.js';
+import { getTodayDate } from '../support/utils.js';
 import 'cypress-real-events';
 import './actions/consultancy.actions';
 
@@ -39,6 +39,13 @@ Cypress.Commands.add("submitLogin", (email, senha) => {
   cy.contains("button", "Entrar").click();
 });
 
+Cypress.Commands.add("goToSignup", () => {
+  cy.start();
+  cy.get('a[href="/register"]').click();
+  cy.contains('h2', 'Crie sua conta')
+    .should('be.visible')
+});
+
 Cypress.Commands.add("goTo", (buttonName, pageTitle) => {
   cy.contains("button", buttonName).should("be.visible").click();
 
@@ -46,19 +53,19 @@ Cypress.Commands.add("goTo", (buttonName, pageTitle) => {
 });
 
 Cypress.Commands.add("login", (ui = false) => {
-  if(ui === true){
+  if (ui === true) {
     cy.start()
     cy.submitLogin('papito@webdojo.com', 'katana123')
-  }else{
+  } else {
     const token = 'e1033d63a53fe66c0fd3451c7fd8f617'
     const loginDate = getTodayDate()
 
     cy.setCookie('login_date', loginDate);
 
     cy.visit('/dashboard', {
-      onBeforeLoad(win){
+      onBeforeLoad(win) {
         win.localStorage.setItem('token', token)
       }
     });
-  } 
+  }
 });
